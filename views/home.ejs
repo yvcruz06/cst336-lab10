@@ -1,0 +1,58 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+	<div class='jumbotron'>
+		<h1> POPULAR QUOTES </h1>
+		<form action='/quotes' method='GET'>
+			<div class='form-group row'>
+				<label for='firstname' class='col-sm-4 col-form-label'>First Name</label>
+				<div class='col-sm-4'>
+					<input type='text' class='form-control' id='firstname' name='firstname' placeholder='Jane' required>
+				</div>
+			</div>
+			<div class='form-group row'>
+				<label for='lastname' class='col-sm-4 col-form-label'>Last Name</label>
+				<div class='col-sm-4'>
+					<input type='text' class='form-control' id='lastname' name='lastname' placeholder='Doe' required>
+				</div>
+			</div>
+			<div class='form-group row'>
+				<label for='keyword' class='col-sm-4 col-form-label'>Keyword</label>
+				<div class='col-sm-4'>
+					<input type='text' class='form-control' id='keyword' name='keyword' placeholder='keyword' required>
+				</div>
+			</div>
+			<div class='form-group row'>
+				<label for='category' class='col-sm-4 col-form-label'>Category</label>
+					<div class='col-sm-4'>
+            		<select class='form-control' id='category' name='category'>
+            		<option value = "Inspirational">Inspirational</option>
+            		<option value = "Motivational">Motivational</option>
+            		<option value = "Life">Life</option>
+            		<option value = "Wisdom">Wisdom</option>
+            		<option value = "Freedom">Freedom</option>
+            		<option value = "Moral">Moral</option>
+            		</select>
+            		</div>
+			</div>
+			<div class='form-group row'>
+				<label for='gender' class='col-sm-4 col-form-label'>Gender</label>
+				<div class='col-sm-4'>
+					<input type="radio" class='form-control' id="male" name="gender" value="m">
+					<label for="male">Male</label>
+					<input type="radio" class='form-control' id="female" name="gender" value="f">
+					<label for="female">Female</label>
+				</div>
+			</div>
+			<div class='form-group row'>
+				<div class='col-sm-4'></div>
+				<div class='col-sm-4'>
+					<button class='btn btn-primary btn-block'>Search Quotes</button>
+				</div>
+				<div class='col-sm-4'></div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<%- include ('templates/footer'); -%>

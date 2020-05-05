@@ -1,0 +1,25 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <h3> INSPIRATIONAL QUOTES </h3>
+        <a class='btn btn-primary' href='/home2'>Home</a>
+    </div>
+    
+    <%if(!quotes){%>
+        <h3>There is no quote | <a href='/author2/<%=authorId%>/quotes2/new'>New Quote</a></h3>
+    <%}
+    else{%>
+        <h3>Quotes from <%=name%> | <a href='/author2/<%=authorId%>/quotes2/new'>New Quote</a></h3>
+        <ul>
+            <%quotes.forEach(function(q){%>
+                <li>
+                    <%=q.quote%></br>
+                    &nbsp;&nbsp;<a href='/author2/<%=authorId%>/quotes2/<%=q.quoteId%>/edit'>Edit</a> | <a href='/author2/<%=authorId%>/quotes2/<%=q.quoteId%>/delete'>Delete</a>
+                </li>
+            <%});%>
+        </ul>
+    <%}%>
+</div>
+
+<%- include ('templates/footer'); -%>

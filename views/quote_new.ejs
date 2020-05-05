@@ -1,0 +1,44 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+	<div class='jumbotron'>
+		<h3> INSPIRATIONAL QUOTES </h3>
+		<a class='btn btn-primary' href='/home2'>Home</a>
+	</div>
+	<h3>Add New Quote</h3>
+	<form action='/author2/<%=authorId%>/quotes2' method='POST'>
+        <div class='form-group row'>
+			<label for='quote' class='col-sm-4 col-form-label'>Quote</label>
+			<div class='col-sm-4'>
+				<textarea class='form-control' rows='5' id='quote' name='quote' required></textarea>
+			</div>
+		</div>
+		<div class='form-group row'>
+			<label for='likes' class='col-sm-4 col-form-label'>Likes</label>
+			<div class='col-sm-4'>
+				<input type='text' class='form-control' id='likes' name='likes' placeholder='1' required>
+			</div>
+		</div>
+	    <div class='form-group row'>
+			<label for='category' class='col-sm-4 col-form-label'>Category</label>
+			<div class='col-sm-4'>
+				<select class='form-control' id='category' name='category'>
+                    <option>Inspirational</option>
+                    <option>Motivational</option>
+                    <option>Life</option>
+                    <option>Wisdom</option>
+                    <option>Freedom</option>
+                    <option>Moral</option>
+                    <option>Liberty</option>
+                </select>
+			</div>
+		</div>
+	    <div class='form-group row'>
+			<div class='col-sm-4'></div>
+			<div class='col-sm-4'>
+				<button class='btn btn-primary btn-block'>Add Quote</button>
+			</div>
+			<div class='col-sm-4'></div>
+		</div>
+	</form>
+</div>

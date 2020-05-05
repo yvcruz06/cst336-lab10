@@ -1,0 +1,29 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+	<div class='jumbotron'>
+		<h3> INSPIRATIONAL QUOTES </h3>
+		<a class='btn btn-primary' href='/author2/new'>New Author</a>
+	</div>
+	<div class='row'>
+        <%if(!authors){%>
+            <h1 class='col-sm-12 nofound'>Empty database. Please add the first author!</h1>    
+        <%}
+        else{%>
+        	<table>
+        		<tr><th>ID</th><th>Author</th><th>DOB</th><th>DOD</th><th>Action</th></tr>
+        		<tr><td colspan="2"><hr/></td></tr>
+        		<%authors.forEach(function(author){%>
+            		<tr>
+            		    <td><%=author.authorId%></td>
+            			<td><%=author.firstName%> <%=author.lastName%></td>
+            			<td><%=author.dob%></td>
+            			<td><%=author.dod%></td>
+            			<td><a href='/author2/<%=author.authorId%>'>Info</a> | <a href='/author2/<%=author.authorId%>/edit'>Edit</a> | <a href='/confirmation/<%=author.authorId%>'>Delete</a> </td></tr>
+        		<%});%>
+        	</table>
+        <%}%>
+    </div>
+</div>
+
+<%- include ('templates/footer'); -%>

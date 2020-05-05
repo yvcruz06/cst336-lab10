@@ -1,0 +1,51 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+    <div class='jumbotron'>
+    <h1 style='text-align:center;'> FOUND QUOTES </h1>
+        <div class='row'>
+            <div class='col-sm-4'></div>
+            <button class='col-sm-4 btn btn-info btn-block'onclick='location.href="/";'>Search Again</button>
+            <div class='col-sm-4'></div>
+        </div>
+    </div>
+    
+    <h3>Quotes</h3>
+    <ul>
+        <%quotes.forEach(function(q){%>
+            <li><%=q.quote%> 
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                <%=name%> </button></li>
+        <%});%>
+    </ul>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Author Info</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <img class='col-sm-4 portrait' src=<%=info.portrait%> /> <br>
+		    <div class='col-sm-4 info'>
+		        <h3><%=name%></h3>
+		        <div><b>Born:</b> <%=info.dob%></div>
+		        <div><b>Dead:</b> <%=info.dod%></div>
+		        <div><b>Sex:</b> <%=info.sex%></div>
+		        <div><b>Profession:</b> <%=info.profession%></div>
+		        <div><b>Country:</b> <%=info.country%></div>
+		        <div class='bio'><b>Biography:</b> <%=info.biography%></div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include ('templates/footer'); -%>
