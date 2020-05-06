@@ -19,11 +19,12 @@ app.use(session({
 
 
 /* Configure MySQL DBMS */
+// mysql://bc7a8d0a27b048:dac785fc@us-cdbr-east-06.cleardb.net/heroku_1b02916b4249400?reconnect=true
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'yvcruz',
-    password: 'yvcruz',
-    database: 'quotes_db2'
+    host: 'us-cdbr-east-06.cleardb.net',
+    user: 'bc7a8d0a27b048',
+    password: 'dac785fc',
+    database: 'heroku_1b02916b4249400'
 });
 connection.connect();
 
@@ -308,7 +309,8 @@ app.get('*', function(req, res){
 });
 
 //starting server
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Server is running...");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
 });
 
